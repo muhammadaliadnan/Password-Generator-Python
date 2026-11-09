@@ -1,0 +1,25 @@
+import random
+
+import string
+letters = list(string.ascii_letters)
+numbers_ = list(range(1,11))
+symbols = list(string.punctuation)
+print("Wellcome to Password Generator")
+nr_letters = int(input("How many letters would you like to generate? "))
+nr_numbers = int(input("How many numbers would you like to generate?(1-10) "))
+nr_symbols = int(input("How many symbols would you like to generate? "))
+password = []
+for i in range(nr_letters):
+        password.append(random.choice(letters))
+
+for i in range(nr_numbers):
+         password.append(random.choice(numbers_))
+
+for i in range(nr_symbols):
+            password.append(random.choice(symbols))
+
+random.shuffle(password)
+
+
+final_password = "".join(str(item) for item in password)
+print(f"Your password is final_password: {final_password}")
